@@ -129,6 +129,37 @@ if [ $1 = "-sapphire" ]; then
 fi
 ####################################################################################################
 
+################################## crDroid
+if [ $1 = "-cr-9" ]; then
+    echo "Start sync crDroid A9"
+    mkdir cr-9; cd cr-9
+    repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 9.0
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+
+if [ $1 = "-cr-10" ]; then
+    echo "Start sync crDroid A10"
+    mkdir cr-10; cd cr-10
+    repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 10.0
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+
+if [ $1 = "-cr-11" ]; then
+    echo "Start sync crDroid A11"
+    mkdir cr-11; cd cr-11
+    repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 11.0
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+
+if [ $1 = "-cr-12" ]; then
+    echo "Start sync crDroid A12"
+    mkdir cr-12; cd cr-12
+    repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 12.0
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+####################################################################################################
+
+
 ################################## ProjectBlaze
 if [ $1 = "-pb" ]; then
     echo "Start sync ProjectBlaze"
