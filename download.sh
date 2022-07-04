@@ -17,11 +17,20 @@ PROJECT="Help for this script:\n\
 -los19 - Sync LOS 19.1\n\
 -komodo11 - Sync KomodoOS 11\n\
 -komodo12 - Sync KomodoOS 12.1\n\
+-dc - Sync Device/Vendor/Kernel/Clang for certus\n\
 \n\
 By @ShelbyHell"
 
 if [ $1 = "-help" ]; then
     echo -e $PROJECT
+fi
+
+if [ $1 = "-dc" ]; then
+    git clone https://github.com/qwertyuiii-code/android_device_xiaomi_certus-1 device/xiaomi/certus
+    git clone https://github.com/qwertyuiii-code/android_kernel_xiaomi_mt6765 -b 10-alps kernel/xiaomi/certus
+    git clone https://github.com/qwertyuiii-code/android_vendor_xiaomi vendor/xiaomi
+    git clone https://github.com/qwertyuiii-code/vendor_mediatek-ims vendor/mediatek-ims
+    git clone https://gitlab.com/qwertyuiii-code/linaro_arm-linux-gnueabihf-7-5 -b master --depth=1 prebuilts/gcc/linux-x86/arm/arm-linux-gnueabihf-7.5
 fi
 
 if [ $1 = "-setvm" ]; then
