@@ -1,5 +1,7 @@
 ####################################################################################################
-PROJECT="Help for this script:\n\
+PROJECT="
+///////////////////////////////// Script for sync ROM's. /////////////////////////////////\n\
+Help for this script:\n\
 -setvm - Setting VM
 -pb - Sync ProjectBlaze\n\
 -evo-elle - Sync EvoX A11\n\
@@ -31,7 +33,8 @@ PROJECT="Help for this script:\n\
 -dc - Sync Device/Vendor/Kernel/Clang for certus\n\
 -dp - Sync DT/VT/KT/Clang for pine\n\
 \n\
-By @ShelbyHell"
+By @ShelbyHell\n\
+//////////////////////////////////////////////////////////////////"
 
 if [ $1 = "-help" ]; then
     echo -e $PROJECT
