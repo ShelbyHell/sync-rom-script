@@ -18,6 +18,7 @@ PROJECT="Help for this script:\n\
 -komodo11 - Sync KomodoOS 11\n\
 -komodo12 - Sync KomodoOS 12.1\n\
 -dc - Sync Device/Vendor/Kernel/Clang for certus\n\
+-dp - Sync DT/VT/KT/Clang for pine\n\
 \n\
 By @ShelbyHell"
 
@@ -31,6 +32,13 @@ if [ $1 = "-dc" ]; then
     git clone https://github.com/qwertyuiii-code/android_vendor_xiaomi vendor/xiaomi
     git clone https://github.com/qwertyuiii-code/vendor_mediatek-ims vendor/mediatek-ims
     git clone https://gitlab.com/qwertyuiii-code/linaro_arm-linux-gnueabihf-7-5 -b master --depth=1 prebuilts/gcc/linux-x86/arm/arm-linux-gnueabihf-7.5
+fi
+
+if [ $1 = "-dp" ]; then
+    git clone https://github.com/Shelby-Lab/android_device_xiaomi_pine device/xiaomi/pine
+    git clone https://github.com/Shelby-Lab/android_vendor_xiaomi_pine vendor/xiaomi/pine
+    git clone --depth=1 https://github.com/dotOS-Devices/kernel_xiaomi_pine kernel/xiaomi/pine
+    git clone --depth=1 https://github.com/kdrag0n/proton-clang prebuilts/clang/host/linux-x86/clang-proton
 fi
 
 if [ $1 = "-setvm" ]; then
