@@ -18,6 +18,7 @@ PROJECT="Help for this script:\n\
 -los19 - Sync LOS 19.1\n\
 -komodo11 - Sync KomodoOS 11\n\
 -komodo12 - Sync KomodoOS 12.1\n\
+-sapphire - Sync AOSPA Sapphire\n\
 -dc - Sync Device/Vendor/Kernel/Clang for certus\n\
 -dp - Sync DT/VT/KT/Clang for pine\n\
 \n\
@@ -86,6 +87,19 @@ set -xe \
 
 sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
 sudo chmod a+rx /usr/local/bin/repo
+fi
+####################################################################################################
+
+################################## AEX
+
+####################################################################################################
+
+################################## AOSPA
+if [ $1 = "-sapphire" ]; then
+    echo "Start sync AOSPA Sapphire"
+    mkdir sapphire; cd sapphire
+    repo init --depth=1 -u -u https://github.com/AOSPA/manifest -b sapphire
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
 fi
 ####################################################################################################
 
