@@ -91,7 +91,33 @@ fi
 ####################################################################################################
 
 ################################## AEX
+if [ $1 = "-aex-9" ]; then
+    echo "Start sync AEX A9"
+    mkdir aex-9; cd aex-9
+    repo init --depth=1 -u https://github.com/AospExtended/manifest.git -b 9.x
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
 
+if [ $1 = "-aex-10" ]; then
+    echo "Start sync AEX A10"
+    mkdir aex-10; cd aex-10
+    repo init --depth=1 -u https://github.com/AospExtended/manifest.git -b 10.x
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+
+if [ $1 = "-aex-11" ]; then
+    echo "Start sync AEX A11"
+    mkdir aex-11; cd aex-11
+    repo init --depth=1 -u https://github.com/AospExtended/manifest.git -b 11.x
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
+
+if [ $1 = "-aex-12" ]; then
+    echo "Start sync AEX A12"
+    mkdir aex-12; cd aex-12
+    repo init --depth=1 -u https://github.com/AospExtended/manifest.git -b 12.x
+    repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+fi
 ####################################################################################################
 
 ################################## AOSPA
