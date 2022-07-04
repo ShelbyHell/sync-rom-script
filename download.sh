@@ -1,3 +1,4 @@
+####################################################################################################
 PROJECT="Help for this script:\n\
 -setvm - Setting VM
 -pb - Sync ProjectBlaze\n\
@@ -25,7 +26,9 @@ By @ShelbyHell"
 if [ $1 = "-help" ]; then
     echo -e $PROJECT
 fi
+####################################################################################################
 
+################################## DT/VT/KT/Clang tree's
 if [ $1 = "-dc" ]; then
     git clone https://github.com/qwertyuiii-code/android_device_xiaomi_certus-1 device/xiaomi/certus
     git clone https://github.com/qwertyuiii-code/android_kernel_xiaomi_mt6765 -b 10-alps kernel/xiaomi/certus
@@ -40,7 +43,9 @@ if [ $1 = "-dp" ]; then
     git clone --depth=1 https://github.com/dotOS-Devices/kernel_xiaomi_pine kernel/xiaomi/pine
     git clone --depth=1 https://github.com/kdrag0n/proton-clang prebuilts/clang/host/linux-x86/clang-proton
 fi
+####################################################################################################
 
+################################## Setting VM
 if [ $1 = "-setvm" ]; then
 sudo apt-get update -q -y && sudo apt-get install -q -y --no-install-recommends \
     apt-utils apt-transport-https python3-apt \
@@ -82,14 +87,16 @@ set -xe \
 sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
 sudo chmod a+rx /usr/local/bin/repo
 fi
+####################################################################################################
 
-
+################################## ProjectBlaze
 if [ $1 = "-pb" ]; then
     echo "Start sync ProjectBlaze"
     mkdir pb; cd pb
     repo init --depth=1 -u https://github.com/ProjectBlaze/manifest.git -b 12.1
     repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
 fi
+####################################################################################################
 
 ################################## EvolutionX
 if [ $1 = "-evo-elle" ]; then
