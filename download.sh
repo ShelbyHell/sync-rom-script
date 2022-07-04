@@ -8,6 +8,15 @@ PROJECT="Help for this script:\n\
 -arrow-10 - Sync ArrowOS A10\n\
 -arrow-11 - Sync ArrowOS A11\n\
 -arrow-12 - Sync ArrowOS A12\n\
+-aex-9 - Sync AEX A9\n\
+-aex-10 - Sync AEX A10\n\
+-aex-11 - Sync AEX A11\n\
+-aex-12 - Sync AEX A12\n\
+-cr-9 - Sync crDroid A9\n\
+-cr-10 - Sync crDroid A10\n\
+-cr-11 - Sync crDroid A11\n\
+-cr-12 - Sync crDroid A12\n\
+-sapphire - Sync AOSPA Sapphire\n\
 -pe-pie - Sync PE+ A9\n\
 -pe-ten - Sync PE+ A10\n\
 -pe-eleven - Sync PE+ A11\n\
